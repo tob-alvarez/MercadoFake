@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Entypo from '@expo/vector-icons/Entypo';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
@@ -9,6 +9,13 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import MercadoPagoCard from '../CardMercadoMain/MercadoPagoCard';
 
 const Main = () => {
+
+    const [seeMoney, setSeeMoney] = useState(false);
+
+    const handleSee = () => {
+        setSeeMoney(!seeMoney)
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -27,18 +34,17 @@ const Main = () => {
                 </View>
             </View>
             <View style={{flexDirection: 'row', marginTop: 5}}>
-                <Text style={{fontWeight: 'bold', fontSize: 32}}>$15.000</Text>
-                <Text style={{fontWeight: 'bold', fontSize: 16}}>10</Text>
-                <Pressable style={styles.botonojo}> 
-                    <Ionicons name="eye-outline" size={20} color="black" />
+                <Text style={{fontWeight: 'bold', fontSize: 32}}>{seeMoney ? "$15.000" : "****"}</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16}}>{seeMoney ? "$00" : "**"}</Text>
+                <Pressable style={styles.botonojo} onPress={handleSee}> 
+                    <Ionicons name={seeMoney? "eye-outline" : "eye-off-outline"} size={20} color="black" />
                 </Pressable>
             </View>
             <View style={styles.mensajeVerde}>
-                <View style={{flexDirection: 'row', borderWidth: 1, borderColor: 'green', width: 20, borderRadius: 50, alignItems:'center'}}>
+                <View style={{flexDirection: 'row', borderWidth: 1, borderColor: 'green', borderRadius: 50, alignItems:'center', padding: 3}}>
                     <MaterialIcons name="attach-money" size={14} color="green" />
-                    <Entypo name="triangle-up" size={12} color="green" style={{right: 7}}/>
                 </View>
-                <Text style={{fontSize: 11}}>Ingresá dinero asi crece mientras lo tenés disponible</Text>
+                <Text style={{fontSize: 13}}>Ingresá dinero asi crece mientras lo tenés disponible</Text>
             </View>
             <View style={styles.containerBotones}>
                 <View style={styles.botonGris}>
@@ -112,7 +118,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#b1dfbd80',
         borderRadius: 8,
         flexDirection: 'row',
-        gap: 10
+        gap: 10,
+        alignItems: 'center'
     },
     containerBotones:{
         flexDirection: 'row',
@@ -122,7 +129,7 @@ const styles = StyleSheet.create({
     botonGris:{
         width: 65,
         height: 65,
-        backgroundColor: '#CCCCCC80',
+        backgroundColor: '#CCCCCC40',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 50,

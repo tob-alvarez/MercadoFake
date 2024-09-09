@@ -6,6 +6,7 @@ import { RefreshControl, ScrollView, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Main from '../components/Main/Main';
 import Accesos from '../components/Accesos/Accesos';
+import Slider from '../components/Slider/Slider';
 
 type HomeProps = NativeStackScreenProps<StackScreens, 'Home'>;
 
@@ -44,6 +45,7 @@ const Home: React.FC<HomeProps> = ({ navigation }) => {
         />
         <Main/>
         <Accesos/>
+        <Slider/>
       </ScrollView>
     </LinearGradient>
   );

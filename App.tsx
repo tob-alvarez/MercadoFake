@@ -42,7 +42,7 @@ const App: React.FC = () => {
 
             return <Icon name={iconName} size={24} color={color} />;
           },
-          tabBarActiveTintColor: 'blue',
+          tabBarActiveTintColor: '#048ec6',
           tabBarInactiveTintColor: 'gray',
           tabBarStyle: {
             height: 60,
@@ -53,7 +53,7 @@ const App: React.FC = () => {
         <Tab.Screen name="Home" component={Home} options={{ title: 'Inicio', headerShown: false }} />
         <Tab.Screen name="Actividad" component={Actividad} options={{ title: 'Actividad' }} />
         <Tab.Screen name="Beneficios" component={Beneficios} options={{ title: 'Beneficios' }} />
-        <Tab.Screen name="Mas" component={Mas} options={{ title: 'Mas' }} />
+        <Tab.Screen name="Mas" component={Mas} options={{ title: 'Mas', headerShown: false}} />
       </Tab.Navigator>
     </NavigationContainer>
   );
