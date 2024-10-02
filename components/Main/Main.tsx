@@ -44,7 +44,7 @@ const Main = () => {
                 <View style={{flexDirection: 'row', borderWidth: 1, borderColor: 'green', borderRadius: 50, alignItems:'center', padding: 3}}>
                     <MaterialIcons name="attach-money" size={14} color="green" />
                 </View>
-                <Text style={{fontSize: 13}}>Ingresá dinero asi crece mientras lo tenés disponible</Text>
+                <Text style={{fontSize: 12, textAlign: 'auto'}}>Ingresá dinero asi crece mientras lo tenés disponible</Text>
             </View>
             <View style={styles.containerBotones}>
                 <View style={styles.botonGris}>
@@ -113,13 +113,13 @@ const styles = StyleSheet.create({
         marginLeft: 5
     },
     mensajeVerde:{
-        padding: 20,
+        padding: 15,
         marginTop: 20,
         backgroundColor: '#b1dfbd80',
         borderRadius: 8,
         flexDirection: 'row',
         gap: 10,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     containerBotones:{
         flexDirection: 'row',

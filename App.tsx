@@ -51,9 +51,19 @@ const App: React.FC = () => {
         })}
       >
         <Tab.Screen name="Home" component={Home} options={{ title: 'Inicio', headerShown: false }} />
-        <Tab.Screen name="Actividad" component={Actividad} options={{ title: 'Actividad' }} />
-        <Tab.Screen name="Beneficios" component={Beneficios} options={{ title: 'Beneficios' }} />
-        <Tab.Screen name="Mas" component={Mas} options={{ title: 'Mas', headerShown: false}} />
+        <Tab.Screen name="Actividad" component={Actividad} options={{
+          title: 'Actividad', headerStyle: {
+            backgroundColor: '#00aaff', 
+          },
+          headerTintColor: '#fff'
+        }} />
+        <Tab.Screen name="Beneficios" component={Beneficios} options={{
+          title: 'Beneficios', headerStyle: {
+            backgroundColor: '#00aaff',
+          },
+          headerTintColor: '#fff'
+        }} />
+        <Tab.Screen name="Mas" component={Mas} options={{ title: 'Mas', headerShown: false }} />
       </Tab.Navigator>
     </NavigationContainer>
   );

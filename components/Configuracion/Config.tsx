@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { MaterialIcons, MaterialCommunityIcons, FontAwesome5, Entypo, FontAwesome,Feather, Ionicons, AntDesign } from '@expo/vector-icons';
+import Divider from '../Divider/Divider';
 
 const Config = () => {
     return (
@@ -45,7 +46,7 @@ const Config = () => {
                 <MaterialIcons name="help-outline" size={20} color="black" />
                 <Text style={styles.menuText}>Ayuda</Text>
             </View>
-
+            <Divider></Divider>
             <View style={styles.menuItem}>
                 <AntDesign name="wallet" size={20} color="black" />
                 <Text style={styles.menuText}>Tu dinero</Text>
@@ -68,7 +69,7 @@ const Config = () => {
                     <Text style={styles.badgeText}>NUEVO</Text>
                 </View>
             </View>
-
+            <Divider></Divider>
             {/* More menu items */}
             <View style={styles.menuItem}>
                 <MaterialCommunityIcons name="hand-coin-outline" size={20} color="black" />
@@ -89,7 +90,7 @@ const Config = () => {
                 <MaterialCommunityIcons name="star-circle-outline" size={20} color="black" />
                 <Text style={styles.menuText}>Suscripciones</Text>
             </View>
-
+            <Divider></Divider>
             {/* Footer Section */}
             <View style={styles.footer}>
                 <Text style={styles.footerText}>Acerca de Mercado Pago</Text>
